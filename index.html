@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ครีมบรรเทาและฟื้นฟูผิวหัวนมถลอก แดง แสบ ระคายเคือง</title>
+    <title>NurtureCare — ครีมฟื้นฟูผิวหัวนมและลดการระคายเคืองระดับพรีเมียม</title>
     <!-- Google Fonts: Prompt -->
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #d4778d;
-            --secondary-color: #fce8ec;
-            --text-color: #333333;
-            --light-bg: #faf7f8;
+            --primary: #c2697e;
+            --primary-dark: #a35165;
+            --accent: #f4d3d8;
+            --bg-soft: #fcf9fa;
+            --text-main: #2c2c2c;
+            --text-muted: #666666;
             --white: #ffffff;
         }
 
@@ -23,140 +25,219 @@
 
         body {
             font-family: 'Prompt', sans-serif;
-            color: var(--text-color);
-            background-color: var(--light-bg);
-            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-soft);
+            line-height: 1.7;
         }
 
+        /* Hero Section */
         header {
-            background: linear-gradient(135deg, var(--secondary-color), #fff);
-            padding: 40px 20px;
+            background: linear-gradient(135deg, #fff0f3 0%, #fae1e6 100%);
+            padding: 60px 20px;
             text-align: center;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #f0d5db;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 960px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
         }
 
-        /* Image Placeholder Style */
+        .brand-tag {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 6px 16px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
         .image-placeholder {
             width: 100%;
-            height: 300px;
-            background-color: #e2d4d8;
-            border: 2px dashed var(--primary-color);
+            height: 320px;
+            background: linear-gradient(45deg, #ebd4d9, #f7e6e9);
+            border: 2px dashed var(--primary);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #666;
-            font-weight: 500;
-            border-radius: 12px;
-            margin: 20px 0;
+            color: var(--primary-dark);
+            font-weight: 600;
+            border-radius: 16px;
+            margin: 25px 0;
+            box-shadow: 0 10px 25px rgba(194, 105, 126, 0.1);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            font-weight: 700;
         }
 
         .hero-slogan {
-            font-size: 1.5rem;
-            color: var(--primary-color);
+            font-size: 1.4rem;
+            color: var(--text-main);
             font-weight: 600;
             margin: 15px 0;
-            line-height: 1.4;
+            line-height: 1.5;
         }
 
         .hero-desc {
-            font-size: 1.1rem;
-            color: #555;
-            margin-bottom: 20px;
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            max-width: 750px;
+            margin: 0 auto;
         }
 
+        /* Sections */
         section {
             background: var(--white);
-            margin: 20px 0;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            margin: 30px 0;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.03);
         }
 
         h2 {
-            color: var(--primary-color);
-            font-size: 1.6rem;
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 10px;
+            color: var(--primary-dark);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+            text-align: center;
         }
 
-        h3 {
-            font-size: 1.2rem;
-            color: #444;
-            margin-top: 15px;
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        /* Ingredients Grid */
+        .ingredient-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .ingredient-card {
+            background: var(--bg-soft);
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            border-radius: 0 12px 12px 0;
+            transition: transform 0.2s ease;
+        }
+
+        .ingredient-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .ingredient-card h3 {
+            color: var(--primary-dark);
+            font-size: 1.15rem;
             margin-bottom: 8px;
         }
 
-        ul {
-            list-style-type: none;
-            padding-left: 0;
+        .ingredient-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 6px;
         }
 
-        li {
-            margin-bottom: 15px;
-            padding: 12px;
-            background: var(--light-bg);
-            border-radius: 8px;
+        .research-tag {
+            display: inline-block;
+            background: #eef5ec;
+            color: #3b7a33;
+            font-size: 0.85rem;
+            padding: 4px 10px;
+            border-radius: 6px;
+            margin-top: 8px;
+            font-weight: 500;
         }
 
-        li strong {
-            color: var(--primary-color);
-        }
-
-        .overview-grid {
+        /* Overview Matrix */
+        .matrix-container {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 15px;
+            gap: 20px;
         }
 
-        .contact-section {
+        .matrix-box {
+            background: var(--bg-soft);
+            padding: 25px;
+            border-radius: 12px;
             text-align: center;
-            background: linear-gradient(135deg, var(--secondary-color), #fff);
+            border-top: 4px solid var(--primary);
+        }
+
+        .matrix-box h3 {
+            color: var(--primary-dark);
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .matrix-box .actives {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        /* Contact & CTA */
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, #fff0f3 0%, #fae1e6 100%);
+            border: 2px solid #f2d0d7;
         }
 
         .btn-line {
             display: inline-block;
             background-color: #06C755;
             color: white;
-            padding: 12px 30px;
-            font-size: 1.2rem;
+            padding: 14px 35px;
+            font-size: 1.15rem;
             font-weight: 600;
             text-decoration: none;
-            border-radius: 30px;
-            margin: 15px 0;
-            box-shadow: 0 4px 10px rgba(6, 199, 85, 0.3);
-            transition: background 0.3s ease;
+            border-radius: 35px;
+            margin: 20px 0;
+            box-shadow: 0 6px 15px rgba(6, 199, 85, 0.3);
+            transition: all 0.3s ease;
         }
 
         .btn-line:hover {
             background-color: #05b24c;
+            transform: scale(1.03);
         }
 
         .qr-placeholder {
-            width: 200px;
-            height: 200px;
-            background-color: #e2d4d8;
+            width: 180px;
+            height: 180px;
+            background-color: var(--white);
             border: 2px dashed #06C755;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #666;
-            margin: 20px auto;
+            color: var(--text-muted);
+            margin: 20px auto 10px auto;
             border-radius: 12px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-align: center;
-            padding: 10px;
+            padding: 15px;
         }
 
         @media (min-width: 768px) {
-            .overview-grid {
+            .ingredient-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .matrix-container {
                 grid-template-columns: repeat(3, 1fr);
+            }
+            h1 {
+                font-size: 2.6rem;
             }
         }
     </style>
@@ -165,14 +246,16 @@
 
     <header>
         <div class="container">
-            <!-- [ใส่รูปผลิตภัณฑ์ของคุณตรงนี้] -->
-            <div class="image-placeholder">[ใส่รูปผลิตภัณฑ์ของคุณตรงนี้]</div>
+            <span class="brand-tag">✨ NurtureCare Official</span>
+            <h1>คืนความสุขทุกการให้นมและสัมผัส</h1>
+            
+            <div class="image-placeholder">[ใส่รูปผลิตภัณฑ์แบรนด์ NurtureCare ของคุณตรงนี้]</div>
             
             <div class="hero-slogan">
-                "ทุกการสัมผัส…อาจกลายเป็นความเจ็บที่ต้องฝืน"<br>
-                "จุดเล็กๆ ที่ไม่ใช่เรื่องเล็ก"
+                "ทุกการสัมผัส…ไม่ควรแลกมาด้วยความเจ็บปวด"<br>
+                <span style="font-size: 1.1rem; font-weight: 400; color: var(--primary-dark);">เพราะ 'จุดเล็กๆ' ของคุณแม่ คือเรื่องที่เราใส่ใจที่สุด</span>
             </div>
-            <p class="hero-desc">ผิวหัวนมถลอก แดง แสบ และระคายเคือง ปัญหาที่คุณแม่หรือผู้ประสบปัญหาต้องเผชิญ เราเข้าใจและพร้อมดูแลคุณด้วยผลิตภัณฑ์สูตรอ่อนโยนและทรงประสิทธิภาพ</p>
+            <p class="hero-desc">จบปัญหาผิวหัวนมถลอก แดง แสบ และระคายเคืองอย่างตรงจุด ด้วยบาล์มสูตรอ่อนโยนพิเศษ ผสานสารสกัดธรรมชาติระดับเวิลด์คลาสที่คุณแม่ให้นมไว้วางใจ</p>
         </div>
     </header>
 
@@ -180,76 +263,85 @@
         
         <!-- ทำไมต้องเลือกเรา -->
         <section>
-            <h2>ทำไมต้องเลือกเรา? เจาะลึกส่วนผสมระดับพรีเมียม</h2>
-            <p style="margin-bottom: 20px;">สูตรของเราคัดสรรสารสกัดธรรมชาติและแอคทีฟที่มีงานวิจัยรองรับ เพื่อการฟื้นฟูผิวที่บอบบางโดยเฉพาะ:</p>
+            <h2>ทำไมต้องเลือก NurtureCare?</h2>
+            <p class="section-subtitle">เจาะลึกส่วนผสมระดับพรีเมียม ผ่านการคัดสรรและมีงานวิจัยรองรับเพื่อผิวบอบบางโดยเฉพาะ</p>
             
-            <ul>
-                <li>
-                    <strong>1. Bis-Diglyceryl Polyacyladipate-2</strong>
-                    <p>• หน้าที่หลักเป็นเหมือน Protective Barrier เคลือบผิว และลดการสูญเสียน้ำ (TEWL)[span_0](start_span)[span_0](end_span)</p>
-                    <p>• ทำให้แผลไม่แห้ง และลดการเสียดสีจากเสื้อหรือการปั๊มนม[span_1](start_span)[span_1](end_span)</p>
-                    <p>• <em>งานวิจัยพบว่า:</em> ช่วยสร้างสภาพแวดล้อมที่เหมาะสมต่อการซ่อมแซมผิว (Moist Wound Healing) ซึ่งเป็นหลักการเดียวกับแผลไฟไหม้หรือแผลถลอก[span_2](start_span)[span_2](end_span)</p>
-                </li>
-                <li>
-                    <strong>2. Shea Butter (Butyrospermum Parkii Butter)</strong>
-                    <p>• Active แบบธรรมชาติที่อุดมไปด้วย Fatty acids, Vitamin A, Vitamin E, Triterpenes และ Phytosterols[span_3](start_span)[span_3](end_span)</p>
-                    <p>• คุณสมบัติ: ลดการอักเสบ ลดการแสบ ฟื้นฟู Skin Barrier และเพิ่มความชุ่มชื้น[span_4](start_span)[span_4](end_span)</p>
-                    <p>• มีงานวิจัยเกี่ยวกับ Eczema, Dermatitis และ Wound healing พบว่าช่วยเพิ่มการสร้างเซลล์ผิวใหม่และลดการสูญเสียน้ำ[span_5](start_span)[span_5](end_span)</p>
-                </li>
-                <li>
-                    <strong>3. Jojoba Oil</strong>
-                    <p>• เพิ่มความชุ่มชื้น ลดการแตกของผิว และช่วยทำให้ผิวยืดหยุ่น[span_6](start_span)[span_6](end_span)</p>
-                </li>
-                <li>
-                    <strong>4. Cocoa Butter (Theobroma Cacao Seed Butter)</strong>
-                    <p>• สร้างเกราะป้องกันผิว ให้บาล์มแข็งตัว และเพิ่มความชุ่มชื้น[span_7](start_span)[span_7](end_span)</p>
-                    <p>• มี Polyphenol, Antioxidant และ Fatty Acid สูง ช่วยลดการแตกของผิว เหมาะกับหัวนมแตก/ถลอก[span_8](start_span)[span_8](end_span)</p>
-                </li>
-                <li>
-                    <strong>5. Tocopheryl Acetate (Vitamin E)</strong>
-                    <p>• เสถียร ไม่มีกลิ่นหืน ทำหน้าที่เป็น Antioxidant, ลด Oxidative Stress, ปกป้องผิว และสนับสนุนการซ่อมแซมผิว[span_9](start_span)[span_9](end_span)</p>
-                </li>
-                <li>
-                    <strong>6. Bisabolol</strong>
-                    <p>• 1 ในพระเอกของสูตร มีงานวิจัยรับรองว่าช่วยลดการอักเสบ ลดรอยแดง ลดการระคายเคือง ลดอาการแสบ และช่วยกระตุ้นการสมานแผล[span_10](start_span)[span_10](end_span)</p>
-                </li>
-            </ul>
+            <div class="ingredient-grid">
+                <div class="ingredient-card">
+                    <h3>1. Bis-Diglyceryl Polyacyladipate-2</h3>
+                    <p>• ทำหน้าที่เป็น <strong>Protective Barrier</strong> เคลือบผิว ป้องกันการสูญเสียน้ำ (TEWL)</p>
+                    <p>• ตัดปัญหาแผลแห้งแตก และลดการเสียดสีกับเสื้อผ้าหรือเครื่องปั๊มนม</p>
+                    <div class="research-tag">🔬 Moist Wound Healing Standard</div>
+                </div>
+
+                <div class="ingredient-card">
+                    <h3>2. Shea Butter (Butter Extract)</h3>
+                    <p>• อุดมด้วย Fatty acids, Vitamin A, E และ Triterpenes ตามธรรมชาติ</p>
+                    <p>• ปลดล็อกอาการแสบแดง ฟื้นฟูเกราะป้องกันผิว (Skin Barrier) ให้กลับมาแข็งแรง</p>
+                    <div class="research-tag">🔬 Clinically proven for Eczema & Dermatitis</div>
+                </div>
+
+                <div class="ingredient-card">
+                    <h3>3. Jojoba Oil</h3>
+                    <p>• เติมความชุ่มชื้นล้ำลึก เพิ่มความยืดหยุ่น ป้องกันรอยแตกใหม่</p>
+                    <div class="research-tag">🔬 Natural Skin Elasticity Booster</div>
+                </div>
+
+                <div class="ingredient-card">
+                    <h3>4. Cocoa Butter</h3>
+                    <p>• อุดมด้วย Polyphenol และ Antioxidant สูง ช่วยสมานผิวที่แตกปริได้อย่างมีประสิทธิภาพ</p>
+                    <div class="research-tag">🔬 Deep Nourishment Care</div>
+                </div>
+
+                <div class="ingredient-card">
+                    <h3>5. Tocopheryl Acetate (Vitamin E)</h3>
+                    <p>• วิตามินอีบริสุทธิ์เสถียรสูง ต้านอนุมูลอิสระ (Antioxidant) ลด Oxidative Stress</p>
+                    <div class="research-tag">🔬 Cellular Repair Support</div>
+                </div>
+
+                <div class="ingredient-card">
+                    <h3>6. Bisabolol</h3>
+                    <p>• สารสกัดทรงพลังยืนหนึ่งเรื่องการลดอักเสบ ลดรอยแดง และบรรเทาอาการแสบทันที</p>
+                    <div class="research-tag">🔬 Anti-irritant & Soothing Action</div>
+                </div>
+            </div>
         </section>
 
         <!-- ภาพรวมของสูตร -->
         <section>
-            <h2>ภาพรวมของสูตร (Formulation Overview)</h2>
-            <p style="margin-bottom: 20px;">เราคำนึงถึงความปลอดภัยและผลลัพธ์สูงสุด จึงแบ่งการทำงานของสูตรออกเป็น 3 กลุ่มหลัก:</p>
+            <h2>3 กลไกการทำงานเพื่อผลลัพธ์สูงสุด</h2>
+            <p class="section-subtitle">ออกแบบสูตรด้วยความเข้าใจโครงสร้างผิวอย่างแท้จริง ผ่าน 3 ระบบการดูแล:</p>
             
-            <div class="overview-grid">
-                <div style="background: var(--light-bg); padding: 20px; border-radius: 8px;">
-                    <h3>กลุ่มที่ 1: Barrier Protection</h3>
-                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 10px;">(Bis-Diglyceryl Polyacyladipate-2, Shea Butter, Cocoa Butter)</p>
-                    <p><strong>หน้าที่หลัก:</strong> ปิดแผล ลดการเสียดสี และรักษาความชุ่มชื้น[span_11](start_span)[span_11](end_span)</p>
+            <div class="matrix-container">
+                <div class="matrix-box">
+                    <h3>🛡️ Barrier Protection</h3>
+                    <div class="actives">(Bis-Diglyceryl, Shea & Cocoa Butter)</div>
+                    <p><strong>หน้าที่หลัก:</strong> ปิดล็อกแผล ลดการเสียดสี และรักษาความชุ่มชื้นให้อยู่กับผิวตลอดวัน</p>
                 </div>
-                <div style="background: var(--light-bg); padding: 20px; border-radius: 8px;">
-                    <h3>กลุ่มที่ 2: Moisturizing</h3>
-                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 10px;">(Shea Butter, Jojoba Oil, Cocoa Butter)</p>
-                    <p><strong>หน้าที่หลัก:</strong> ยับยั้งไม่ทำให้ผิวแตกหรือถลอกเพิ่มขึ้น[span_12](start_span)[span_12](end_span)</p>
+                
+                <div class="matrix-box">
+                    <h3>💧 Deep Moisturizing</h3>
+                    <div class="actives">(Shea Butter, Jojoba Oil, Cocoa Butter)</div>
+                    <p><strong>หน้าที่หลัก:</strong> คืนความยืดหยุ่น ป้องกันไม่ให้ผิวแห้งตึงหรือปริแตกซ้ำ</p>
                 </div>
-                <div style="background: var(--light-bg); padding: 20px; border-radius: 8px;">
-                    <h3>กลุ่มที่ 3: Repair Support</h3>
-                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 10px;">(Vitamin E, Bisabolol)</p>
-                    <p><strong>หน้าที่หลัก:</strong> ช่วยลดการอักเสบและสนับสนุนการซ่อมแซมผิว[span_13](start_span)[span_13](end_span)</p>
+                
+                <div class="matrix-box">
+                    <h3>🌿 Repair Support</h3>
+                    <div class="actives">(Vitamin E, Bisabolol)</div>
+                    <p><strong>หน้าที่หลัก:</strong> สงบอาการอักเสบ ลดรอยแดง และเร่งกระบวนการสมานผิวอย่างปลอดภัย</p>
                 </div>
             </div>
         </section>
 
         <!-- สั่งซื้อสินค้า / ปรึกษา -->
-        <section class="contact-section">
-            <h2>สั่งซื้อสินค้า / ปรึกษาผู้เชี่ยวชาญ</h2>
-            <p>สนใจผลิตภัณฑ์หรือต้องการสอบถามข้อมูลเพิ่มเติม สามารถติดต่อเราได้ทันทีผ่านช่องทางไลน์:</p>
+        <section class="cta-section">
+            <h2>ให้ NurtureCareดูแลคุณในทุกช่วงเวลาสำคัญ</h2>
+            <p style="color: var(--text-muted); margin-top: 10px;">ปรึกษาปัญหาผิวหรือสั่งซื้อสินค้า ส่งตรงถึงมือคุณได้อย่างรวดเร็วผ่านช่องทางไลน์:</p>
             
-            <a href="https://lin.ee/u7HLsDV" class="btn-line" target="_blank">👉 แอดไลน์คลิกที่นี่</a>
+            <a href="https://lin.ee/u7HLsDV" class="btn-line" target="_blank">💬 สั่งซื้อ / ปรึกษาผู้เชี่ยวชาญ (คลิก)</a>
             
-            <!-- [ใส่รูป QR Code ไลน์ ตรงนี้เพื่อความสะดวกในการสแกน] -->
             <div class="qr-placeholder">
-                [ใส่รูป QR Code ไลน์<br>ตรงนี้เพื่อความสะดวกในการสแกน]
+                [ใส่รูป QR Code ไลน์<br>สำหรับสแกนสั่งซื้อ]
             </div>
         </section>
 
